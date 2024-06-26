@@ -5,6 +5,8 @@ from django_cryptography.fields import encrypt
 
 # Custom User model that extends Django's AbstractUser
 class CustomUser(AbstractUser):
+    class Meta:
+        app_label = 'events'
     # Additional fields for the user profile
     profile_picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
     bio = models.TextField(max_length=500, blank=True)
